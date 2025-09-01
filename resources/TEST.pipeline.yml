@@ -1,0 +1,14 @@
+# The main pipeline for TEST
+resources:
+  pipelines:
+    TEST_pipeline:
+      name: TEST_pipeline
+      catalog: jnavarro_test_3278285730259350
+      schema: TEST_${bundle.target}
+      serverless: true
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src

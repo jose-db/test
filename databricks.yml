@@ -1,0 +1,35 @@
+# This is a Databricks asset bundle definition for TEST.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+bundle:
+  name: TEST
+  uuid: b755af20-27b2-4f03-a601-13ffbad2a2da
+
+artifacts:
+  python_artifact:
+    type: whl
+    build: uv build --wheel
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+targets:
+  dev:
+    # The default target uses 'mode: development' to create a development copy.
+    # - Deployed resources get prefixed with '[dev my_user_name]'
+    # - Any job schedules and triggers are paused by default.
+    # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-b2b0e5d3-f963.cloud.databricks.com
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-b2b0e5d3-f963.cloud.databricks.com
+      # We explicitly deploy to /Workspace/Users/jose.navarro@databricks.com to make sure we only have a single copy.
+      root_path: /Workspace/Users/jose.navarro@databricks.com/.bundle/${bundle.name}/${bundle.target}
+    permissions:
+      - user_name: jose.navarro@databricks.com
+        level: CAN_MANAGE
