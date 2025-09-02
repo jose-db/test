@@ -46,8 +46,8 @@ jobs:
       - run: databricks bundle deploy -t prod
         working-directory: .
         env:
-          DATABRICKS_CLIENT_SECRET: ${{ secrets.DBX_CLIENT_SECRET }}
-          DATABRICKS_CLIENT_ID: ${{ secrets.DBX_CLIENT_ID }}
+          DATABRICKS_CLIENT_SECRET: ${{ DBX_CLIENT_SECRET.DBX_CLIENT_SECRET }}
+          DATABRICKS_CLIENT_ID: ${{ DBX_CLIENT_SECRET.DBX_CLIENT_ID }}
           DATABRICKS_BUNDLE_ENV: prod
 
   # Update Databricks repos
