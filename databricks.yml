@@ -33,3 +33,5 @@ targets:
     permissions:
       - user_name: jose.navarro@databricks.com
         level: CAN_MANAGE
+      - service_principal_name: f83a3e3b-0403-47ec-8597-a9d7ebbfbfae
+        level: CAN_MANAGE
