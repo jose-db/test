@@ -49,7 +49,7 @@ jobs:
           DATABRICKS_CLIENT_SECRET: ${{ secrets.DBX_CLIENT_SECRET }}
           DATABRICKS_CLIENT_ID: ${{ secrets.DBX_CLIENT_ID }}
           DATABRICKS_BUNDLE_ENV: prod
-          DATABRICKS_HOST: https://dbc-b2b0e5d3-f963.cloud.databricks.com
+          
 
   # Update Databricks repos
   update-repos:
