@@ -19,13 +19,13 @@ targets:
     # - Deployed resources get prefixed with '[dev my_user_name]'
     # - Any job schedules and triggers are paused by default.
     # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
-    mode: dev
+    mode: development
     default: false
     workspace:
       host: https://dbc-725b0881-8420.cloud.databricks.com/
 
   prod:
-    mode: prod
+    mode: production
     workspace:
       host: https://dbc-725b0881-8420.cloud.databricks.com/
       # We explicitly deploy to /Workspace/Users/jose.navarro@databricks.com to make sure we only have a single copy.
