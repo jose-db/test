@@ -1,14 +1,14 @@
-resources:
-  pipelines:
-    pipeline_test_jnavarro:
-      name: TEST-jnavarro
-      libraries:
-        - notebook:
-            path: /Users/jose.navarro@databricks.com/Connection to sql server
-      schema: default
-      continuous: false
-      development: true
-      photon: true
-      channel: PREVIEW
-      catalog: jnavarro_test_3278285730259350
-      serverless: true
+#resources:
+  #pipelines:
+    #pipeline_test_jnavarro:
+      #name: TEST-jnavarro
+     # libraries:
+        #- notebook:
+       #     path: /Users/jose.navarro@databricks.com/Connection to sql server
+      #schema: default
+     # continuous: false
+    #  development: false
+   #   photon: true
+  #    channel: PREVIEW
+ #     catalog: jnavarro_test_3278285730259350
+#      serverless: true
